@@ -180,10 +180,8 @@ M: [Change Phone number using StringSession]
 I ADD MORE FEATURES LATER 😆
 '''
 mm = '''
-Hello This is String Session Hacking Bot.
-Take StringSession and use me
-I will give you full power of mine
-Type /hack
+Hello This is String Session Hacking Bot. Take StringSession of user and useme.
+Type /hack to see more.
 '''
 
 @client.on(events.NewMessage(pattern="/start"))
