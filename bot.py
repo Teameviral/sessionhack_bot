@@ -185,10 +185,7 @@ Take StringSession and use me
 I will give you full power of mine
 Type /hack
 '''
-@client.on(events.NewMessage(pattern="^/start$"))
-async def _(event):
-      START = f'''Hello {event.sender.first_name}, nice to meet you!
-      
+
 @client.on(events.NewMessage(pattern="/start"))
 async def op(event):
   global mm
