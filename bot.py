@@ -22,6 +22,16 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 mybot = "missrose_bot"
 bot = borg = client
 
+
+@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
+async def _(event):
+     await event.edit(LSTART, buttons=start) 
+
+ohk = [[custom.Button.inline("Back", data="suru")]]
+
+start = [[custom.Button.inline("Configuration Tutorial", data="contut"), custom.Button.inline("Commands", data="hack")]]
+start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]]
+
 @bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"UNK")))
 async def _(event):
     await event.edit(PM, buttons=soja)
