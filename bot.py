@@ -5,6 +5,7 @@ os.system("pip install Telethon==1.21.1")
 from telethon import TelegramClient, events, functions, types
 api_id = os.environ.get("APP_ID")
 import os, asyncio
+from telethon import button, custom, events
 import re
 from os import system
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
