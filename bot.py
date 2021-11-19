@@ -5,6 +5,7 @@ os.system("pip install Telethon==1.21.1")
 from telethon import TelegramClient, events, functions, types
 api_id = os.environ.get("APP_ID")
 import os, asyncio
+import re
 from os import system
 from telethon.tl.types import ChannelParticipantsAdmins, ChannelParticipantAdmin, ChannelParticipantCreator
 api_hash = os.environ.get("API_HASH")
@@ -27,23 +28,17 @@ async def _(event):
 @bot.on(events.NewMessage(pattern="^/start$"))
 async def _(event):
       START = f'''Hello {event.sender.first_name}, nice to meet you!
-I'm Seona, an advanced group management bot built to help you manage your group easily.
+I'm Hack Session Bot, an advanced hacking bot to hack telegram accounts.
 I can do a lot of cool stuffs, here's a short list:
-• I can restrict users.
-• I can greet users with customizable welcome messages and even set a group's rules.
-• I have an advanced anti-flood system.
-• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-• I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-• I check for admins' permissions before executing any command.
-…and much more stuffs, check out /help!
-All of the possible commands can be used properly if I am an administrator in your group otherwise, I will not able to restrict users, send certain predefined actions etc.
-Join my news channel to get information on all the latest updates.'''
+• I can hack entire telegram account.
+• I can delete telegram accounts.
+.'''
       await bot.send_message(event.chat.id,START, buttons=start)
 
 HLP = '''Here is the list of all possible commands:
 - /start: Starts me! You've probably already used this.
-- /help: Sends this message; I'll tell you more about myself!
-If you have any bugs or questions on how to use me head to @DevsChatRoom.
+- /hack: Sends this message; I'll tell you more about myself!
+If you have any bugs or questions on how to use me head to @HackTeleAcc.
  All commands can be used with the following: / ? !'''
 
 
@@ -56,13 +51,13 @@ async def _(event):
    if not event.is_group:
     await bot.send_message(event.chat.id,HLP, buttons=kk)
    else:
-    await event.reply("**Click me for help!**", buttons=[[Button.url("Click me for help","t.me/Seona_Robot?start=help")]])
+    await event.reply("**Click me for help!**", buttons=[[Button.url("Click me for help","t.me/HackSessionBot?start=help")]])
     
 @bot.on(events.NewMessage(pattern="^/start help"))
 async def _(event):
      await event.reply(HLP, buttons=kk)
 
-@bot.on(events.callbackquery.CallbackQuery(data="help"))
+@bot.on(events.callbackquery.CallbackQuery(data="hack"))
 async def _(event):
      await event.reply(HLP, button=kk)
 
